@@ -7,14 +7,16 @@ function isValid(s: string): boolean {
     };
 
     for(const ch of s){
-       if(ch ==='(' || ch ==='{' || ch === '['){
-            stack.push(ch);
+       if(ch in map){
+            if(stack.length && stack[stack.length-1]=== map[ch]){
+                stack.pop();
+            }else{
+                return false;
+            }
        }else{
-        if(stack.length==0) return false;
-        const top = stack.pop();
-        if(top !== map[ch]) return false;
+        stack.push(ch);
        }
        
     }
-    return true;
+    return stack.length === 0;
 };
