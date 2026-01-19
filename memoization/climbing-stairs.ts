@@ -10,4 +10,4 @@ function climbStairs(n: number): number {
     }
     return dp[n];
 
-};
+}
