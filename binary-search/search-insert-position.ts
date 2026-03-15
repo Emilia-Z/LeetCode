@@ -10,13 +10,10 @@ function searchInsert(nums: number[], target: number): number {
         else if(nums[middle]<target){
             left = middle + 1;
         }
-        else if(nums[middle]==target){
-            return middle;
-        }
-        else break;
+        else return middle;
     }
-    if (nums[left]>target) return left;
-    if (nums[right]<target) return right+1;
+    if (nums[left]>=target){return left;}
+    else{ return right+1;}
 
     
 };
