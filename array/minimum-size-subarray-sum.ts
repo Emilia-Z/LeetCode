@@ -13,5 +13,5 @@ function minSubArrayLen(target: number, nums: number[]): number {
             
         }
     }
-    return sublength === Infinity? 0: min;
+    return sublength === Infinity? 0: sublength;
 };
