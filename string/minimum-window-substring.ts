@@ -20,6 +20,12 @@ function minWindow(s: string, t: string): string {
                 valid++;
             }
         }
+        if(valid===need.size){
+            if(right-left < minLen){
+                start = left;
+                minLen = right-left;
+            }
+        }
         while(valid===need.size){
             if(right-left < minLen){
                 start = left;
@@ -35,9 +41,7 @@ function minWindow(s: string, t: string): string {
                 }
                 window.set(d, window.get(d)-1);
             }
-            
         }
     }
     return minLen === Infinity? "":s.substring(start, start+minLen);
-
 };
