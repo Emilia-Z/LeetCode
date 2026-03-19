@@ -30,9 +30,12 @@ function minWindow(s: string, t: string): string {
             left++;
 
             if(need.has(d)){
+                if(window.get(d)===need.get(d)){
+                    valid--;
+                }
                 window.set(d, window.get(d)-1);
             }
-            valid--;
+            
         }
     }
     return minLen === Infinity? "":s.substring(start, start+minLen);
