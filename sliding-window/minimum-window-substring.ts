@@ -20,14 +20,12 @@ function minWindow(s: string, t: string): string {
                 valid++;
             }
         }
-        if(valid===need.size){
+        
+        while(valid===need.size){
             if(right-left < minLen){
                 start = left;
                 minLen = right-left;
             }
-        }
-        while(valid===need.size){
-            
 
             const d = s[left];
             left++;
